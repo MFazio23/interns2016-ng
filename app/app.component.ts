@@ -2,10 +2,10 @@ import {Component} from '@angular/core';
 import {Routes, ROUTER_DIRECTIVES} from "@angular/router";
 
 @Routes([
-    {path: '/', component: ListUsersComponent},
-    {path: '/edit?userId=:id', component: EditUserComponent},
-    {path: '/create', component: CreateUserComponent},
-    {path: '/view?userId=:id', component: ViewUserComponent}
+//    {path: '/', component: ListUsersComponent},
+//    {path: '/edit?userId=:id', component: EditUserComponent},
+//    {path: '/create', component: CreateUserComponent},
+//    {path: '/view?userId=:id', component: ViewUserComponent}
 ])
 
 @Component({

@@ -18,3 +18,4 @@ _temp
 !challenges/*.js
 !internal/js/*.js
 !internal/js/challenges/*.js
+.vscode/settings.json

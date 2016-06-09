@@ -10,7 +10,7 @@ import {ViewAllComponent} from './viewall.component';
     //{path: '/', component: ListUsersComponent},
     {path: '/edit?userId=:id', component: EditUserComponent},
    {path: '/create', component: CreateUserComponent},
-  {path: '/viewUser', component: ViewUserComponent}
+  {path: '/viewUser', component: ViewUserComponent},
   {path: '/viewAll', component: ViewAllComponent, useAsDefault: true }
 ])
 

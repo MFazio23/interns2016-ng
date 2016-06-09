@@ -7,7 +7,7 @@ import {ListUsersComponent} from './listuser.component';
 
 @Routes([
     {path: '/', component: ListUsersComponent},
-    {path: '/edit?userId=:id', component: EditUserComponent}
+    {path: '/edit?userId=:id', component: EditUserComponent},
    {path: '/create', component: CreateUserComponent},
   {path: '/view?userId=:id', component: ViewUserComponent}
 ])

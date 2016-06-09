@@ -18,11 +18,6 @@ import {ViewUserComponent} from './viewuser.component';
     template:
 `
 
-<nav>
-	<a href="/view">View</a>
-	<a href="/edit?userId=:id">Edit</a>
-	<a href="/create">Create</a>
-</nav>
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -40,13 +35,13 @@ import {ViewUserComponent} from './viewuser.component';
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">About</a>
+                        <a href="/view">View</a>
                     </li>
                     <li>
-                        <a href="#">Services</a>
+                        <a href="/edit?userId=:id">Edit</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="/create">Create</a>
                     </li>
                 </ul>
             </div>

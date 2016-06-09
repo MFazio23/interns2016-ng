@@ -11,3 +11,4 @@ import {Routes, ROUTER_DIRECTIVES} from "@angular/router";
 <footer></footer>
 `
 })
+export class ViewUserComponent { }

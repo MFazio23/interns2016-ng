@@ -1,7 +1,7 @@
 {
-  "name": "angular2-quickstart",
+  "name": "interns2016-ng-starter",
   "version": "1.0.0",
-  "description": "QuickStart package.json from the documentation, supplemented with testing support",
+  "description": "Test app for the 2016 Intern class",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server -c bs-config.json\" ",
     "docker-build": "docker build -t ng2-quickstart .",
@@ -17,7 +17,7 @@
     "webdriver:update": "webdriver-manager update"
   },
   "keywords": [],
-  "author": "",
+  "author": "Skyline Technologies",
   "license": "ISC",
   "dependencies": {
     "@angular/common":  "2.0.0-rc.1",

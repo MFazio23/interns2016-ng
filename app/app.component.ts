@@ -1,15 +1,16 @@
 import {Component} from '@angular/core';
 import {EditUserComponent} from './edituser.component';
-import {Routes, ROUTER_DIRECTIVES} from "@angular/router";
+import {Routes, ROUTER_DIRECTIVES, Router} from "@angular/router";
 import {CreateUserComponent} from './createuser.component';
-import {ViewUserComponent} from './ViewUserComponent';
-import {ListUsersComponent} from './listuser.component';
+import {ViewUserComponent} from './viewuser.component';
+import {ListUsersComponent} from './listusers.component';
+//import { bootstrap } from '@angular/platform-browser-dynamic';
 
 @Routes([
     {path: '/', component: ListUsersComponent},
-    {path: '/edit?userId=:id', component: EditUserComponent},
+    {path: '/edit', component: EditUserComponent},
    {path: '/create', component: CreateUserComponent},
-  {path: '/view?userId=:id', component: ViewUserComponent}
+  {path: '/view', component: ViewUserComponent}
 ])
 
 @Component({
@@ -18,8 +19,8 @@ import {ListUsersComponent} from './listuser.component';
     template:
 `
 <nav>
-	<a href="/view?userId=:id">View</a>
-	<a href="/edit?userId=:id">Edit</a>
+	<a href="/view">View</a>
+	<a href="/edit">Edit</a>
 	<a href="/create">Create</a>
 </nav>
 <top-nav>
@@ -28,4 +29,8 @@ import {ListUsersComponent} from './listuser.component';
 <footer></footer>
 `
 })
-export class AppComponent { }
+export class AppComponent { 
+	constructor(private router: Router){
+		
+	}
+}

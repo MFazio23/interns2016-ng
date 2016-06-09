@@ -16,7 +16,7 @@ import {ListUsersComponent}} from './listuser.component';
     selector: 'my-app',
     directives: [ROUTER_DIRECTIVES],
     template:
-
+`
 <nav>
 	<a href="/view?userId=:id">View</a>
 	<a href="/edit?userId=:id">Edit</a>

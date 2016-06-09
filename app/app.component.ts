@@ -2,14 +2,14 @@ import {Component} from '@angular/core';
 import {EditUserComponent} from './edituser.component';
 import {Routes, ROUTER_DIRECTIVES} from "@angular/router";
 import {CreateUserComponent} from './createuser.component';
-import {ViewUserComponent} from './ViewUserComponent';
-import {ListUsersComponent} from './listuser.component';
+//import {ViewUserComponent} from './ViewUserComponent';
+//import {ListUsersComponent} from './listuser.component';
 
 @Routes([
-    {path: '/', component: ListUsersComponent},
-    {path: '/edit?userId=:id', component: EditUserComponent},
+    //{path: '/', component: ListUsersComponent},
+    {path: '/edit', component: EditUserComponent},
    {path: '/create', component: CreateUserComponent},
-  {path: '/view?userId=:id', component: ViewUserComponent}
+  //{path: '/view?userId=:id', component: ViewUserComponent}
 ])
 
 @Component({

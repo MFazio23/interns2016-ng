@@ -5,8 +5,8 @@ import {Component} from '@angular/core';
     selector: 'edit-user',
     template:
 `
-
 <div>hi</div>
+
 `
 })
 export class EditUserComponent { }

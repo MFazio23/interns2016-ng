@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {EditUserComponent} from './edituser.component';
-import {Routes, ROUTER_DIRECTIVES} from "@angular/router";
+import {Routes,Router, ROUTER_DIRECTIVES} from "@angular/router";
 import {CreateUserComponent} from './createuser.component';
 //import {ViewUserComponent} from './ViewUserComponent';
 //import {ListUsersComponent} from './listuser.component';
@@ -28,4 +28,8 @@ import {CreateUserComponent} from './createuser.component';
 <footer></footer>
 `
 })
-export class AppComponent { }
+export class AppComponent {
+    constructor(private router: Router){
+
+    }
+ }

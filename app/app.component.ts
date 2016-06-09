@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {EditUserComponent} from './edituser.component';
-import {Routes, ROUTER_DIRECTIVES} from "@angular/router";
+import {Router, Routes, ROUTER_DIRECTIVES} from "@angular/router";
 import {CreateUserComponent} from './createuser.component';
 import {ViewUserComponent} from './viewuser.component';
 //import {ListUsersComponent} from './listuser.component';

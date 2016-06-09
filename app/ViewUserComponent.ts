@@ -6,8 +6,22 @@ import {Routes, ROUTER_DIRECTIVES} from "@angular/router";
     directives: [ROUTER_DIRECTIVES],
     template:
 `
-<top-nav></top-nav>
-<router-outlet></router-outlet>
-<footer></footer>
+<!doctype html>
+<html>
+	<top-nav>
+		<ul>
+			<li>
+				Hello!
+			</li>
+			<li>
+				Hello!
+			</li>
+		</ul>
+		
+	</top-nav>
+	<router-outlet></router-outlet>
+<footer>Hello</footer>
+</html>
 `
 })
+export class ViewUserComponent { }

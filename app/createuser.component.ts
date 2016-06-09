@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {Person} from './person';
-import {Md5} from 'ts-md5/dist/md5';
 
 @Component({
     selector: 'create-user',
@@ -19,9 +18,11 @@ import {Md5} from 'ts-md5/dist/md5';
         <br /><br />
         <span>School: </span><input id="school" type="textbox" [(ngModel)]="person.school"/>
         <br /><br />
-        <span>Email: </span><input id="email" type="textbox" (blur)="onEmailBlur()" [(ngModel)]="person.email"/>
+        <span>Email: </span><input id="email" type="textbox" [(ngModel)]="person.email"/>
         <br /><br />
-        <input id="submit" type="submit" value="Create Person" (click)="printToConsole()"/>
+        <span>Image Url: </span><input id="imageUrl" type="textbox" (blur)="onImageUrlBlur()" [(ngModel)]="person.imageUrl"/>
+        <br /><br />
+        <input id="submit" type="submit" value="Create Person" (click)="submitToDatabase()"/>
     </form>
 </div>
 
@@ -31,15 +32,14 @@ export class CreateUserComponent {
 
     imageUrl: string;
 
-    person: Person= new Person("", "", "", "");
+    person: Person= new Person("", "", "", "", "");
 
-    onEmailBlur(): void {
-        let url = Md5.hashStr(this.person.email);
-        this.imageUrl = Md5.hashStr(this.person.email).toString();
+    onImageUrlBlur(): void {
+        this.imageUrl = this.person.imageUrl;
     }
 
-    printToConsole(): void {
-        this.imageUrl = this.person.email;
+    submitToDatabase(): void {
+        console.log("Person Info:\nName: " + this.person.name + "\nTitle: " + this.person.title + "\nSchool: " + this.person.school + "\nEmail: " + this.person.email + "\nImage Url: " + this.person.imageUrl);
     }
 
 

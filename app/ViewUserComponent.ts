@@ -8,7 +8,7 @@ import {Routes, ROUTER_DIRECTIVES} from "@angular/router";
 `
 <top-nav></top-nav>
 <router-outlet></router-outlet>
-<footer></footer>
+<footer>Hello</footer>
 `
 })
 export class ViewUserComponent { }

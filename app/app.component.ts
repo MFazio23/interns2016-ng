@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
 import {EditUserComponent} from './edituser.component';
 import {Routes, ROUTER_DIRECTIVES} from "@angular/router";
-import {CreateUserComponent}} from './createuser.component';
-import {ViewUserComponent}} from './ViewUserComponent';
-import {ListUsersComponent}} from './listuser.component';
+import {CreateUserComponent} from './createuser.component';
+import {ViewUserComponent} from './ViewUserComponent';
+import {ListUsersComponent} from './listuser.component';
 
 @Routes([
     {path: '/', component: ListUsersComponent},

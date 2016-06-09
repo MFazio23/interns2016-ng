@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Routes, ROUTER_DIRECTIVES} from "@angular/router";
+import {Person} from './person';
 //import { bootstrap } from '@angular/platform-browser-dynamic';
 //bootstrap(AppComponent);
 
@@ -8,55 +9,44 @@ import {Routes, ROUTER_DIRECTIVES} from "@angular/router";
 	selector: 'ListUsersComponent',
 	directives: [ROUTER_DIRECTIVES],
 	template:
-	
-		`
-			<h1>List Users</h1>
+`	
+		
+			<h1 style = "text-align: center;">List Users</h1>
+			<div style = "padding-left: 5%; padding-right: 5%;">
 			<table class="table table-striped">
-			<tr>
-				<th style = "width: 30%">Name</th>
-				<th style = "width: 30%">Email</th>
-				<th style = "width: 20%">School</th>
-				<th style = "width: 10%">Title</th>
+			<thead>
+				<th style = "width: 25%">Name</th>
+				<th style = "width: 25%">Email</th>
+				<th style = "width: 25%">School</th>
+				<th style = "width: 15%">Title</th>
 				<td style = "width: 5%"></td>
 				<td style = "width: 5%"></td>
-			</tr>
-			<tr>
-					<td>user.name</td>
-					<td>user.email</td>
-					<td>user.school</td>
-					<td>user.title</td>
-					<td><button>Edit</button></td>
-					<td><button>Delete</button></td>
+			</thead>
+			<tbody>
+				<tr *ngFor ="let person of people">
+					<td>{{person.name}}</td>
+					<td>{{person.title}}</td>
+					<td>{{person.school}}</td>
+					<td>{{person.email}}</td>
+					<td>
+						<button type = "button" style = "background-color: blue;"><a href = "'/create'" class = "btn btn-link" style = "color: white;">Edit</a></button>
+					</td>
+					<td>			
+						<button type = "button" style = "background-color: red;"><a href = "'/create'" class = "btn btn-link" style = "color: white;">Delete</a></button>
+					</td>
 				</tr>
-				<tr>
-					<td>user.name</td>
-					<td>user.email</td>
-					<td>user.school</td>
-					<td>user.title</td>
-					<td><button>Edit</button></td>
-					<td><button>Delete</button></td>
-				</tr>
-				<tr>
-					<td>user.name</td>
-					<td>user.email</td>
-					<td>user.school</td>
-					<td>user.title</td>
-					<td><button>Edit</button></td>
-					<td><button>Delete</button></td>
-				</tr>
-			<!-- for(var user in people){
-				<tr>
-					<td>user.name</td>
-					<td>user.email</td>
-					<td>user.school</td>
-					<td>user.title</td>
-					<td><button>Edit</button></td>
-					<td><button>Delete</button></td>
-				</tr>
-			} -->
+			</tbody>
 			</table>
-			<button>Create person</button>
-		`
+				<button type = "button" style = "background-color: green;"><a href = "'/create'" class = "btn btn-link" style = "color: white;">Create Person</a></button>
+			</div>
+			
+`		
 })
 export class ListUsersComponent {
+	
+	people = [
+		new Person("Kyle", "Boss", "Butterburger University", "legend@ry.com"),
+		new Person("Timmy", "Boss", "Butterburger University", "legend@ry.com")
+	];
+	
 }

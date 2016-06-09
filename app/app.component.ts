@@ -9,7 +9,7 @@ import {ViewUserComponent} from './viewuser.component';
     //{path: '/', component: ListUsersComponent},
     {path: '/edit?userId=:id', component: EditUserComponent},
    {path: '/create', component: CreateUserComponent},
-  {path: '/view?userId=:id', component: ViewUserComponent}
+  {path: '/view', component: ViewUserComponent}
 ])
 
 @Component({
@@ -18,7 +18,7 @@ import {ViewUserComponent} from './viewuser.component';
     template:
 `
 <nav>
-	<a href="/view?userId=:id">View</a>
+	<a href="/view">View</a>
 	<a href="/edit?userId=:id">Edit</a>
 	<a href="/create">Create</a>
 </nav>

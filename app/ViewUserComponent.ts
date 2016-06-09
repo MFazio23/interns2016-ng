@@ -5,7 +5,7 @@ import {Routes, ROUTER_DIRECTIVES} from "@angular/router";
     selector: 'View ',
     directives: [ROUTER_DIRECTIVES],
     template:
-
+`
 <!doctype html>
 <html>
 	<top-nav>
@@ -22,6 +22,6 @@ import {Routes, ROUTER_DIRECTIVES} from "@angular/router";
 	<router-outlet></router-outlet>
 <footer>Hello</footer>
 </html>
-
+`
 })
 export class ViewUserComponent { }

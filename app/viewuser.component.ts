@@ -16,6 +16,7 @@ import {ViewUserComponent} from './viewuser.component';
 
 @Component({
     selector: 'my-app',
+    directives: [ROUTER_DIRECTIVES],
     template:
 `
   <h1>hello</h1>
@@ -23,4 +24,4 @@ import {ViewUserComponent} from './viewuser.component';
 })
 export class ViewUserComponent {
     constructor(private router: Router){}
- }
+}

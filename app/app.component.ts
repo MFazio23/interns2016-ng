@@ -1,15 +1,15 @@
 import {Component} from '@angular/core';
 import {EditUserComponent} from './edituser.component';
-import {Routes, ROUTER_DIRECTIVES} from "@angular/router";
+import {Routes, Router, ROUTER_DIRECTIVES} from "@angular/router";
 import {CreateUserComponent} from './createuser.component';
-import {ViewUserComponent} from './ViewUserComponent';
-import {ListUsersComponent} from './listuser.component';
+//import {ViewUserComponent} from './ViewUserComponent';
+//import {ListUsersComponent} from './listuser.component';
 
 @Routes([
-    {path: '/', component: ListUsersComponent},
+    //{path: '/', component: ListUsersComponent},
     {path: '/edit?userId=:id', component: EditUserComponent},
-   {path: '/create', component: CreateUserComponent},
-  {path: '/view?userId=:id', component: ViewUserComponent}
+    {path: '/create', component: CreateUserComponent},
+  //{path: '/view?userId=:id', component: ViewUserComponent}
 ])
 
 @Component({
@@ -28,4 +28,8 @@ import {ListUsersComponent} from './listuser.component';
 <footer></footer>
 `
 })
-export class AppComponent { }
+export class AppComponent { 
+    constructor(private router: Router){
+
+    }
+}

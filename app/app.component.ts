@@ -28,4 +28,8 @@ import {ViewUserComponent} from './viewuser.component';
 <footer></footer>
 `
 })
-export class AppComponent { }
+export class AppComponent { 
+		constructor(private router: Router{
+			
+		}
+}

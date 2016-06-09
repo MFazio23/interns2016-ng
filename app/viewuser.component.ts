@@ -6,9 +6,11 @@ import {Component} from '@angular/core';
     selector: 'view-user',
     template:
 `
+<h1>HELLLLLLOOOO!!!!!!<h2>
 <top-nav>hi</top-nav>
 <router-outlet></router-outlet>
 <footer></footer>
 `
 })
-export class ViewUserComponent { }
+export class ViewUserComponent {
+}

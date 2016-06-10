@@ -1,9 +1,11 @@
 import {Component} from '@angular/core';
 import {Person} from './person';
 import {Md5} from "../lib/Md5.js";
+import {DBService} from "./db-service";
 
 @Component({
     selector: 'create-user',
+    providers: [DBService],
     template:
 `
 
@@ -21,9 +23,8 @@ import {Md5} from "../lib/Md5.js";
         <br /><br />
         <span>Email: </span><input id="email" type="textbox" (blur)="onImageUrlBlur()" [(ngModel)]="person.email"/>
         <br /><br />
-        <span>Image Url: </span><input id="imageUrl" type="textbox"  [(ngModel)]="person.imageUrl"/>
-        <br /><br />
         <input id="submit" type="submit" value="Create Person" (click)="submitToDatabase()"/>
+        <div>{{statusMessage}}</div>
     </form>
 </div>
 
@@ -32,8 +33,11 @@ import {Md5} from "../lib/Md5.js";
 export class CreateUserComponent {
 
     imageUrl: string;
+    statusMessage: string;
 
-    person: Person = new Person("", "", "", "", "");
+    person: Person = new Person("", "", "", "");
+
+    constructor(private dbService: DBService) { }
 
     onImageUrlBlur(): void {
         let hash = Md5.hashStr(this.person.email);
@@ -42,7 +46,12 @@ export class CreateUserComponent {
     }
 
     submitToDatabase(): void {
-        console.log("Person Info:\nName: " + this.person.name + "\nTitle: " + this.person.title + "\nSchool: " + this.person.school + "\nEmail: " + this.person.email + "\nImage Url: " + this.person.imageUrl);
+        this.dbService.addPerson(this.person)
+            .subscribe(
+                person => this.statusMessage = 'Success!',
+                error => this.statusMessage = 'Failure...'
+            );
+        //console.log("Person Info:\nName: " + this.person.name + "\nTitle: " + this.person.title + "\nSchool: " + this.person.school + "\nEmail: " + this.person.email + "\nImage Url: " + this.person.imageUrl);
     }
 
 

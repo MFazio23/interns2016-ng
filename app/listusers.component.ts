@@ -16,11 +16,12 @@ import {Person} from "./person";
         <th>Title</th>
         <th>School</th>
     </tr>
-    <tr *ngFor="let person of people">
+    <tr id="{{person.id}}" *ngFor="let person of people">
         <td>{{person.name}}</td>
         <td><a href="mailto:{{person.email}}">{{person.email}}</a></td>
         <td>{{person.title}}</td>
         <td>{{person.school}}</td>
+        <a (click)="deletePerson(index, person.id)">X</a>
     </tr>
 </table>
 `
@@ -36,6 +37,14 @@ export class ListUsersComponent implements OnInit{
             .subscribe(
                 people => this.people = people,
                 error => this.errorMessage = <any>error
+            );
+    }
+
+    deletePerson(index: number, id: string):void {
+        this.dbService.deletePerson(id)
+            .subscribe(
+                people => delete this.people[index],
+                error => console.log("Del-Err", error)
             );
     }
 

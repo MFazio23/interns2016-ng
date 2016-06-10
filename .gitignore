@@ -19,3 +19,4 @@ _temp
 !internal/js/*.js
 !internal/js/challenges/*.js
 .vscode/
+!lib/*.*

@@ -1,35 +1,33 @@
-import {Component} from '@angular/core';
-import {EditUserComponent} from './edituser.component';
+import {Component} from "@angular/core";
+import {EditUserComponent} from "./edituser.component";
 import {Routes, Router, ROUTER_DIRECTIVES} from "@angular/router";
-import {CreateUserComponent} from './createuser.component';
+import {CreateUserComponent} from "./createuser.component";
+import {ListUsersComponent} from "./listusers.component";
+import {TopNavComponent} from "./topnav.component";
 //import {ViewUserComponent} from './ViewUserComponent';
-//import {ListUsersComponent} from './listuser.component';
 
 @Routes([
-    //{path: '/', component: ListUsersComponent},
-    {path: '/edit?userId=:id', component: EditUserComponent},
+    {path: '/', component: ListUsersComponent},
+    {path: '/edit/:id', component: EditUserComponent},
     {path: '/create', component: CreateUserComponent},
-  //{path: '/view?userId=:id', component: ViewUserComponent}
+    //{path: '/view?userId=:id', component: ViewUserComponent}
 ])
 
 @Component({
     selector: 'my-app',
-    directives: [ROUTER_DIRECTIVES],
-    template:
-`
-<nav>
-	<a href="/view?userId=:id">View</a>
-	<a href="/edit?userId=:id">Edit</a>
-	<a href="/create">Create</a>
-</nav>
+    directives: [TopNavComponent, ROUTER_DIRECTIVES],
+    template: `
+
 <top-nav>
 </top-nav>
-<router-outlet></router-outlet>
+<div class="container-fluid">
+    <router-outlet></router-outlet>
+</div>
 <footer></footer>
 `
 })
-export class AppComponent { 
-    constructor(private router: Router){
+export class AppComponent {
+    constructor(private router:Router) {
 
     }
 }

@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Person} from './person';
+import {Md5} from "../lib/Md5.js";
 
 @Component({
     selector: 'create-user',
@@ -18,9 +19,9 @@ import {Person} from './person';
         <br /><br />
         <span>School: </span><input id="school" type="textbox" [(ngModel)]="person.school"/>
         <br /><br />
-        <span>Email: </span><input id="email" type="textbox" [(ngModel)]="person.email"/>
+        <span>Email: </span><input id="email" type="textbox" (blur)="onImageUrlBlur()" [(ngModel)]="person.email"/>
         <br /><br />
-        <span>Image Url: </span><input id="imageUrl" type="textbox" (blur)="onImageUrlBlur()" [(ngModel)]="person.imageUrl"/>
+        <span>Image Url: </span><input id="imageUrl" type="textbox"  [(ngModel)]="person.imageUrl"/>
         <br /><br />
         <input id="submit" type="submit" value="Create Person" (click)="submitToDatabase()"/>
     </form>
@@ -32,10 +33,12 @@ export class CreateUserComponent {
 
     imageUrl: string;
 
-    person: Person= new Person("", "", "", "", "");
+    person: Person = new Person("", "", "", "", "");
 
     onImageUrlBlur(): void {
-        this.imageUrl = this.person.imageUrl;
+        let hash = Md5.hashStr(this.person.email);
+
+        this.imageUrl = `https://www.gravatar.com/avatar/${hash.toString()}.jpg`;
     }
 
     submitToDatabase(): void {
